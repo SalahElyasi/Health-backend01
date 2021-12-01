@@ -1,0 +1,3 @@
+verifyToken problem:
+
+https://stackoverflow.com/questions/64465450/cant-go-to-the-next-middleware-nodejs

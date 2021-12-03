@@ -1,3 +1,10 @@
 verifyToken problem:
 
 https://stackoverflow.com/questions/64465450/cant-go-to-the-next-middleware-nodejs
+
+Cannot find module 'bcrypt'
+
+npm install node-gyp -g
+npm install bcrypt -g
+
+npm install bcrypt --save

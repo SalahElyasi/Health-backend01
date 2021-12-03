@@ -6,6 +6,7 @@ import {
   signIn,
   getUserInfo,
   approvedSession,
+  update,
 } from "../controllers/auth.js";
 import verifyToken from "../middlewares/verifyToken.js";
 import validateJOI from "../middlewares/validateJOI.js";
@@ -23,5 +24,6 @@ authRouter.post(
 );
 authRouter.get("/me", verifyToken, getUserInfo);
 authRouter.get("/verify-session", verifyToken, approvedSession);
+authRouter.put("/update/:id", update);
 
 export default authRouter;

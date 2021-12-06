@@ -8,3 +8,5 @@ npm install node-gyp -g
 npm install bcrypt -g
 
 npm install bcrypt --save
+
+https://stackoverflow.com/questions/27117337/exclude-route-from-express-middleware

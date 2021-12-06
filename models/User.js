@@ -2,11 +2,11 @@ import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 
 const userSchema = new Schema({
-  name: { type: String, required: true },
+  name: { type: String, default: "" },
   last_name: { type: String, default: "" },
-  email: { type: String, required: true },
+  email: { type: String, default: "" },
   password: { type: String, required: true, select: false },
-  phone: { type: Number },
+  phone: { type: Number, default: null },
   price: { type: Number, default: 0 },
   age: { type: Number, default: null },
   stars: { type: Number, default: null },
@@ -18,6 +18,7 @@ const userSchema = new Schema({
   user: { type: Boolean, default: true },
   therapeut: { type: Boolean, default: false },
   admin: { type: Boolean, default: false },
+  fluchtling: { type: Boolean, default: false },
   expertise: { type: String, default: null },
   bio: { type: String, default: null },
   motto: { type: String, default: null },

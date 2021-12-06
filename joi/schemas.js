@@ -6,3 +6,9 @@ export const signUpBody = Joi.object().keys({
   password: Joi.string().required(),
   // number: Joi.number().integer().optional().default(0),
 });
+
+export const postBody = Joi.object().keys({
+  title: Joi.string().required(),
+  content: Joi.string().required(),
+  // number: Joi.number().integer().optional().default(0),
+});

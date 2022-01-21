@@ -8,7 +8,13 @@ import {
   getUserInfo,
   approvedSession,
   update,
+  likePost,
+  unlikePost,
   createPost,
+  myPosts,
+  commentPost,
+  deletePost,
+  deleteCommentPost,
 } from "../controllers/auth.js";
 import verifyToken from "../middlewares/verifyToken.js";
 import validateJOI from "../middlewares/validateJOI.js";
@@ -26,6 +32,14 @@ authRouter.post(
 );
 authRouter.get("/me", verifyToken, getUserInfo);
 authRouter.get("/verify-session", verifyToken, approvedSession);
-authRouter.patch("/update/:id", update);
+authRouter.patch("/update/:id", verifyToken, update);
+authRouter.post("/createpost", verifyToken, createPost);
+authRouter.get("/myposts", verifyToken, myPosts);
+
+authRouter.put("/like", verifyToken, likePost);
+authRouter.put("/unlike", verifyToken, unlikePost);
+authRouter.patch("/comment/:id", verifyToken, commentPost);
+authRouter.put("/deletecomment", verifyToken, deleteCommentPost);
+authRouter.delete("/deletepost/:id", verifyToken, deletePost);
 
 export default authRouter;

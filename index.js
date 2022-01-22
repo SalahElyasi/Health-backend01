@@ -21,6 +21,9 @@ if (process.env.NODE_ENV !== "production") {
 
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.send("Hello Health01Api");
+});
 app.get("/user", getUser);
 
 // app.get("/getpost/:id", getPostById);
